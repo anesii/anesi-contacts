@@ -9,18 +9,21 @@
                 </div>
                 <div class="ul">
                 <i class="mdi mdi-account-circle"></i> 
-               <span class="title">  Contacts </span>
+               <router-link to="/contacts" class="title" exact>Contacts</router-link>
                 </div>
                 
-                <div>
+                <div class="row">
+                    <div class="col-md-3">
                     <form class="form">
                         <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                              <span class="input-group-text" id="basic-addon1"><i class="mdi mdi-magnify"></i></span> 
+                        </div> 
+                        <input type="text" class=" mdi mdi-magnify form-control" placeholder="Search" v-model="search" @input="searchers">
+                        <!-- <tr v-for="(contact, index) in filtered" :key="index"></tr> -->
                         </div>
                     </form>
+                    </div>
                 </div>
 
                 <div class="top-right">
@@ -41,19 +44,34 @@
 </template>
 
 <script>
-import search from '../search.js'
+// import search from '../search.js'
+// import Contacts from './contacts.vue'
 
 export default {
-  data() {
+    data() {
       return {
-          
+        // contacts:[this.$store.state.contacts],
+        search: ''  
       }
-  },
-  methods:{
+    },
+    methods:{
       sidebarShow(){
           this.$store.commit('sidebarToggle')
-      }
-  }
+        },
+        searchers(){
+            this.$store.commit('updateSearch', this.search)
+        }
+    },
+    computed:{
+        // filteredContacts (){
+        //     return this.contacts.filter((contact) =>{
+        //         return contact.match(this.search);
+        //     });
+        // },
+        // filtered(contact){
+        //     this.$store.getters.getFilteredContacts;
+        // }
+    }
 }
 </script>
 
@@ -82,6 +100,7 @@ export default {
 .mdi-apps{
     margin-right: 40px;
     color: grey;
+    position: relative;
 }
 .mdi-bell{
     border-radius: 50%;
@@ -92,6 +111,7 @@ export default {
     height:25px;
     padding: 8px;
     text-align: center;
+    position: relative;
 }
 .mdi-bell::before{
     font-size: 18px;
@@ -105,6 +125,7 @@ export default {
     margin-right:20px;
     padding: 8px;
     text-align: center;
+    position: relative;
 }
 .title{
     font-size: 22px;
@@ -113,6 +134,7 @@ export default {
     position: absolute;
     top:15px;
     left:50px;
+    text-decoration: none;
 }
 .form{
     border-radius: 50px;
@@ -126,14 +148,19 @@ export default {
     background-color:whitesmoke;
     border: none;
     height: 50px;
+    border-radius: 5px;
+    width: 45rem;
 }
 .toggle{
     color: grey;
-}
+    display: flex;
+    align-items: stretch;
+} 
 .mdi-menu::before{
     font-size: 25px;
 }
 .sticky-top{
     margin-left: 30px;
 }
+
 </style>

@@ -1,8 +1,8 @@
 export default {
     computed:{
-        filteredBlogs: function(){
+        filteredContacts: function(){
             return this.contacts.filter((contact) => {
-                return contact.match(this.search);
+                return contact.index.match(this.search);
             });
         }
     }
