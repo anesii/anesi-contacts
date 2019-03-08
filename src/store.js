@@ -23,7 +23,8 @@ export const store = new Vuex.Store({
             jobTitle: ''
         },
         deletedContacts:[],
-        search: ''
+        search: '',
+        picture: require('./assets/undraw_blank_canvas_3rbb.png')
     },
     getters:{
         getSidebarVisibility(state){
