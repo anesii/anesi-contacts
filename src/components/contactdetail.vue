@@ -13,7 +13,7 @@
             <div class="formm">
                 <div class="body">
                     <div class="form-group">
-                        <i class="mdi mdi-office-building"></i>
+                        <i class="mdi mdi-domain"></i>
                         {{contact.company}}, 
                         {{contact.jobTitle}}
                     </div>

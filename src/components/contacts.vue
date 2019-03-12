@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row pr-5 fixed">
         <div class="col">
             <div class="table-responsive">
             <table class="table table-borderless">
@@ -14,6 +14,9 @@
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Job Title & Company</th>
+                        <th>
+                            <i class="mdi mdi-dots-vertical" data-toggle="popover" data-placement="top" title="List Settings" data-content="Popup content"></i>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,7 +25,12 @@
                           <td scope="row" items="contacts" @click="goToContact(contact)">{{contact.firstName}} {{contact.lastName}}</td>
                         <td>{{contact.email}}</td>
                         <td>{{contact.phone}}</td>
-                        <td>{{contact.company}}, {{contact.jobTitle}}</td>
+                        <td>{{contact.company}}, {{contact.jobTitle}} </td>
+                        <td class='edit_hover_class'>
+                            <i class="mdi mdi-star-outline"></i>
+                            <i class="mdi mdi-pencil-outline"></i>
+                            <i class="mdi mdi-dots-vertical"></i>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -88,4 +96,10 @@ export default {
     tbody tr:hover{
         background-color: rgba(211, 211, 211, 0.404);
     }
+    .edit_hover_class{
+  opacity:0;
+}
+.edit_hover_class:hover{
+ opacity:1;
+}
 </style>

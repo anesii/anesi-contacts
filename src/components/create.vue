@@ -15,7 +15,7 @@
                 </label>
             </div>
             <div class="form-group">
-                <i class="mdi mdi-office-building"></i>
+                <i class="mdi mdi-domain"></i>
                 <label for="company">
                     <input type="text" placeholder= "Company" v-model="input.company">
                 </label>

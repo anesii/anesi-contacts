@@ -22,7 +22,7 @@
             <div class="col">
                 <router-link to="/contacts" exact>
                     <div class="one">
-                        <span> <i class="mdi mdi-account-outline pr-3"></i> </span>
+                        <span><i class="mdi mdi-account-outline pr-3"></i></span>
                        <span> Contacts </span>
                        <span class="fans">{{fans.length}}</span>
                     </div>
@@ -73,7 +73,7 @@ a:hover{
 }
 
 a{
-    color: black;
+    color: rgb(61, 58, 58);
 }
 .one{
     padding: 10px;

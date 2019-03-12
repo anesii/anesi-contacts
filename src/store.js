@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         contacts : [
-            { image: 'AI', firstName: 'Anesi', lastName: 'Joah', email: 'nesi@dickerson.net', company: 'Dickerson Ltd', jobTitle: 'Student', phone: '08093748329', address:'Lagos, Nigeria', birthday: 'May 5th'},
+            { image: 'AI', firstName: 'Anesi', lastName: 'Sahani', email: 'nesi@dickerson.net', company: 'Dickerson Ltd', jobTitle: 'Student', phone: '08093748329', address:'Lagos, Nigeria', birthday: 'May 5th'},
             { image: 'AI', firstName: 'Charles', lastName: 'Joah', email: 'charles@larsen.com', company: 'Larsen PLC', jobTitle: 'Lead Director', phone: '09728276272', address:'Atlanta, Georgia', birthday: 'June 22nd' },
             {image: 'AI', firstName: 'Nick', lastName: 'John', email: 'nick@geneva.co', company: 'Geneva & Sons', jobTitle: 'Assistant Executive Chairman', phone: '07063783283', address:'New York, USA', birthday: 'April 1st' },
             {image: 'AI', firstName: 'Anesi',  lastName: 'Igebu', email: 'anesi@jami.com.ng', company: 'Jami Co.', jobTitle: 'CEO', phone: '07073283982', address:'Toronto, Canada', birthday: 'September 28th' }
@@ -37,7 +37,13 @@ export const store = new Vuex.Store({
             else{
             return state.contacts.filter((contact) =>{
                 var letter = contact.firstName.toLowerCase()
-                return letter.match(state.search);
+                var alphabet = contact.email.toLowerCase()
+                var b = contact.lastName.toLowerCase()
+                var c = contact.phone.toLowerCase()
+                var d = contact.company.toLowerCase()
+                var e = contact.jobTitle.toLowerCase()
+                return letter.match(state.search)||alphabet.match(state.search)||b.match(state.search)
+                ||c.match(state.search)||d.match(state.search)||e.match(state.search);
             });
         }
         },

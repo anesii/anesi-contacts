@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row pr-5 fixed">
         <div class="col">
             <div class="table-responsive">
             <table class="table table-borderless">
@@ -10,6 +10,9 @@
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Job Title & Company</th>
+                        <th>
+                            <i class="mdi mdi-dots-vertical" data-toggle="popover" data-placement="top" title="List Settings" data-content="Popup content"></i>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>

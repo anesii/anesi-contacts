@@ -28,12 +28,12 @@
 
                 <div class="top-right">
                     <span>
-                        <i class="mdi mdi-apps"></i>
+                        <i class="mdi mdi-apps" data-toggle="popover" data-placement="top" title="About" data-content="Popup content"></i>
                     </span>
                     <span>
-                        <i class="mdi mdi-bell"></i>
+                        <i class="mdi mdi-bell" data-toggle="popover" data-placement="top" title="Notifications" data-content="Popup content"></i>
                     </span>
-                    <span class="profile-image"> AI </span>
+                    <span class="profile-image" data-toggle="popover" data-placement="top" title="Sign Out" data-content="Popup content"> AI </span>
                 </div>
                 
                 </header>
