@@ -36,21 +36,20 @@ export const store = new Vuex.Store({
             }
             else{
             return state.contacts.filter((contact) =>{
-                var letter = contact.firstName.toLowerCase()
-                var alphabet = contact.email.toLowerCase()
-                var b = contact.lastName.toLowerCase()
-                var c = contact.phone.toLowerCase()
-                var d = contact.company.toLowerCase()
-                var e = contact.jobTitle.toLowerCase()
-                return letter.match(state.search)||alphabet.match(state.search)||b.match(state.search)
-                ||c.match(state.search)||d.match(state.search)||e.match(state.search);
+                var letter = contact.firstName.toLowerCase();
+                var alphabet = contact.email.toLowerCase();
+                var b = contact.lastName.toLowerCase();
+                var c = contact.phone.toLowerCase();
+                var d = contact.company.toLowerCase();
+                var e = contact.jobTitle.toLowerCase();
+                return letter.match(state.search)||alphabet.match(state.search)||b.match(state.search)||c.match(state.search)||d.match(state.search)||e.match(state.search);
             });
         }
         },
         getContactByName: (state) => (name) => {
             var person = state.contacts.find(contact => {
-                return contact== name;
-            })
+                return contact.firstName== name;
+            });
             return person;
         },
         
@@ -66,9 +65,12 @@ export const store = new Vuex.Store({
         trashedContact(state, contacted){
             var person = state.contacts.find(contact => {
                 return contact == contacted;
-            })
-            state.deletedContacts.push(person)
-            state.contacts.splice(state.contacts.indexOf(person), 1)
+            });
+            state.deletedContacts.push(person);
+            state.contacts.splice(state.contacts.indexOf(person), 1);
+        },
+        addContacts(state, payload){
+            state.contacts.push(payload);
         }
     },
-})
+});

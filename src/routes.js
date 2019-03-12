@@ -8,8 +8,8 @@ import Welcome from './components/welcome.vue';
 
 export default[
     {path: '/', component: Welcome},
-    {path: '/contacts', component: contacts},
+    {path: '/contacts', component: contacts, name: 'contacts'},
     {path: '/createContact', component: createContact},
     {path: '/deletedContacts', component: deletedContacts, name: 'trash'},
-    {path: '/contacts/:name', component: contactDetail, name: 'contact'},
-]
+    {path: '/contacts/:firstName', component: contactDetail, name: 'contact'},
+];

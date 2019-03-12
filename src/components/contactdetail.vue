@@ -47,20 +47,13 @@
 export default {
     computed: {
         contact(){
-            var name = this.$route.params.name;
+            var name = this.$route.params.firstName;
             return this.$store.getters.getContactByName(name);
         },
        
     },
     methods:{
         erase: function() {
-            var fnm =this.contact.firstName
-            var lnm =this.contact.lastName
-            var em =this.contact.email
-            var ph =this.contact.phone
-            var bd =this.contact.birthday
-            var co =this.contact.company
-            var job =this.contact.jobTitle
 
             this.$store.commit('trashedContact', this.contact)
             this.$router.push({name: 'trash'})
