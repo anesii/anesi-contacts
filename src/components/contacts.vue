@@ -2,7 +2,7 @@
     <div class="row pr-5 fixed">
         <div class="col">
             <div class="table-responsive">
-            <table class="table table-borderless">
+            <table class="table table-borderless" style="width:100%">
                 <div class="top">
                     <span> CONTACTS </span>
                     <span class="fans">({{contacts.length}})</span>
@@ -61,7 +61,7 @@ export default {
 <style scoped>
     .table{
         margin-top: 10px;
-       
+       margin-right: 500px;
         
     }
     thead{
@@ -75,6 +75,7 @@ export default {
     tbody tr:hover{
         background-color: rgba(211, 211, 211, 0.404);
         border-left: 5px solid blue;
+        /* width: 100%; */
     }
     /* .edit_hover_class{
   opacity:0;

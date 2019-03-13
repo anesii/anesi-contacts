@@ -3,7 +3,7 @@
             <td v-if="!isIconVisible" :style="{backgroundColor: randomColor(contact.index)}" class="profile-image">{{contact.firstName[0]}}{{contact.lastName[0]}}</td>
             <td v-if="isIconVisible && !checked" @click="activateCheck"> <i class="mdi mdi-18px mdi-checkbox-blank-outline"></i> </td>
             <td v-if="isIconVisible && checked"> <i class="mdi mdi-18px mdi-check-box-outline"></i> </td>
-                <td scope="row" items="contacts" @click="goToContact(contact.firstName)">{{contact.firstName}} {{contact.lastName}}</td>
+            <td scope="row" items="contacts" @click="goToContact(contact.firstName)">{{contact.firstName}} {{contact.lastName}}</td>
             <td>{{contact.email}}</td>
             <td>{{contact.phone}}</td>
             <td>{{contact.company}}, {{contact.jobTitle}} </td>
@@ -69,8 +69,8 @@ export default {
         position: absolute;
     }
     .icons{
-        position: relative;
-        /* padding-right: 150px; */
+        position: absolute;
+        /* margin-left: -50px; */
     }
 </style>
 
