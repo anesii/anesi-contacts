@@ -34,7 +34,7 @@
                  <router-link to="/deletedContacts" exact>
                     <div class="one">
                         <span> <i class="mdi mdi-trash-can-outline pr-3"></i> </span>
-                    Deleted Contacts
+                    Deleted Contacts.
                     </div>
                 </router-link>
             </div>
