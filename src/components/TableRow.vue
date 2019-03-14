@@ -88,6 +88,10 @@ export default {
     }
     .icons{
         position: fixed ;
+        margin-left: -45px;
+        /* display: flex;
+        text-align: center;
+        justify-content:flex-end; */
     }
     
 </style>

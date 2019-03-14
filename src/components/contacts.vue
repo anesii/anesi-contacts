@@ -62,6 +62,11 @@ export default {
     .table{
         margin-top: 10px;
         margin-left: 20px;
+        /* overflow-x: hidden; */
+    }
+    .table-responsive{
+        overflow-x: hidden;
+
     }
     thead{
         border-bottom: .5px solid lightgrey;
@@ -78,4 +83,5 @@ export default {
         cursor: pointer;
         /* width: 100%; */
     }
+    
 </style>
