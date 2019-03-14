@@ -1,18 +1,18 @@
 <template>
-    <tr @mouseover="showIcons" @mouseleave="hideIcons" class="align-items-center">              
+    <tr @mouseover="showIcons" @mouseleave="hideIcons" class="align-items-center">  
             <td v-if="!isIconVisible" :style="{backgroundColor: randomColor(contact.index)}" class="profile-image">{{contact.firstName[0]}}{{contact.lastName[0]}}</td>
             <td v-if="isIconVisible && !checked" @click="activateCheck"> <i class="mdi mdi-18px mdi-checkbox-blank-outline"></i> </td>
-            <td v-if="isIconVisible && checked"> <i class="mdi mdi-18px mdi-check-box-outline"></i> </td>
+            <td v-if="isIconVisible && checked" @click="deactivateCheck"> <i class="mdi mdi-18px mdi-check-box-outline"></i> </td>
             <td scope="row" items="contacts" @click="goToContact(contact.firstName)">{{contact.firstName}}
                 {{contact.lastName}}</td>
             <td @click="goToContact(contact.firstName)">{{contact.email}}</td>
             <td @click="goToContact(contact.firstName)">{{contact.phone}}</td>
             <td @click="goToContact(contact.firstName)">{{contact.company}}, {{contact.jobTitle}} </td>
             <td v-if="isIconVisible" class="icons">
-                <i class="mdi mdi-star-outline px-2" data-toggle="popover" data-placement="top" title="Favourite" data-content="Popup content"></i>
-                <i class="mdi mdi-pencil px-2" data-toggle="popover" data-placement="top" title="Edit Contact" data-content="Popup content"></i>
+                <i class="mdi mdi-star-outline pl-2" data-toggle="popover" data-placement="top" title="Favourite" data-content="Popup content"></i>
+                <i class="mdi mdi-pencil pl-2" data-toggle="popover" data-placement="top" title="Edit Contact" data-content="Popup content"></i>
                 <span class="dropdown">
-                    <i class="mdi mdi-dots-vertical px-2" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                    <i class="mdi mdi-dots-vertical pl-2" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" data-placement="top" title="List Settings" data-content="Popup content">
                             </i>
                     <div class="dropdown-menu" aria-labelledby="triggerId">
@@ -49,6 +49,9 @@ export default {
         activateCheck() {
             this.checked = !this.checked;
         },
+        deactivateCheck() {
+            this.checked
+        },
         randomColor(id) {
             const r = () => Math.floor(256 * Math.random());
 
@@ -83,11 +86,12 @@ export default {
     }
     .mdi-check-box-outline::before .mdi-checkbox-outline-blank::before {
         position: absolute;
+        padding:6px;
+        margin: 3px;
     }
     .icons{
-        position: absolute;
-        padding: 5px;
-        /* margin-left: -50px; */
+        position: fixed ;
     }
+    
 </style>
 

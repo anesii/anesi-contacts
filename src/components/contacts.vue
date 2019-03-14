@@ -61,8 +61,7 @@ export default {
 <style scoped>
     .table{
         margin-top: 10px;
-       margin-right: 500px;
-        
+        margin-left: 20px;
     }
     thead{
         border-bottom: .5px solid lightgrey;

@@ -83,7 +83,7 @@ export default {
     margin-left: 40px;
 }
 .mdi-account-circle{
-    color: rgb(27, 91, 211);
+    color: rgb(40, 107, 196);
 }
 .mdi-account-circle::before{
     font-size: 40px;

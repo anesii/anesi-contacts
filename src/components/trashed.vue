@@ -43,7 +43,7 @@ export default {
 <style scoped>
     .profile-image{
     color: white;
-    background-color: purple;
+    background-color: grey;
     border-radius: 50%;
     width:30px;
     height:30px;
@@ -51,7 +51,7 @@ export default {
     font-weight: bold;
     position: absolute;
     text-align: center;
-    padding:5px;
+    padding:6px;
     margin: 5px;
     }
      .table{

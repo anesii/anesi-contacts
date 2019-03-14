@@ -50,9 +50,6 @@
                 </div>
             </div>
         </form>
-        <div>
-                    <router-link to="/contacts"> Back To Contacts </router-link>           
-        </div>
     </div>
 </template>
 
@@ -89,7 +86,7 @@ export default {
 <style scoped>
     .profile-image{
     color: white;
-    background-color: rgb(45, 87, 201);
+    background-color: rgb(40, 107, 196);
     border-radius: 50%;
     width:100px;
     height:100px;
