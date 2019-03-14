@@ -18,6 +18,7 @@
                 </div>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col">
                 <router-link to="/contacts" exact>
@@ -34,11 +35,12 @@
                  <router-link to="/deletedContacts" exact>
                     <div class="one">
                         <span> <i class="mdi mdi-trash-can-outline pr-3"></i> </span>
-                    Deleted Contacts.
+                    Deleted Contacts
                     </div>
                 </router-link>
             </div>
         </div>
+        <hr>
     </div>
 </template>
 

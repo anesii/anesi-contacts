@@ -17,7 +17,7 @@
                         <th scope="col"></th>
 
                         <th scope="col">
-                            <i class="mdi mdi-dots-vertical" data-toggle="popover" data-placement="top" title="List  Settings" data-content="Popup content"></i>
+                            <i class="mdi mdi-dots-vertical" data-toggle="popover" data-placement="top" title="List Settings" data-content="Popup content"></i>
                         </th>
                         <!-- <th scope="col"></th> -->
                     </tr>
@@ -66,6 +66,7 @@ export default {
     }
     thead{
         border-bottom: .5px solid lightgrey;
+        cursor:default;
     }
     
     .top{
@@ -75,12 +76,7 @@ export default {
     tbody tr:hover{
         background-color: rgba(211, 211, 211, 0.404);
         border-left: 5px solid blue;
+        cursor: pointer;
         /* width: 100%; */
     }
-    /* .edit_hover_class{
-  opacity:0;
-}
-.edit_hover_class:hover{
- opacity:1;
-} */
 </style>

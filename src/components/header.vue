@@ -162,5 +162,7 @@ export default {
 .sticky-top{
     margin-left: 30px;
 }
-
+.top-right{
+    cursor: pointer;
+}
 </style>

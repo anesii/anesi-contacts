@@ -18,8 +18,11 @@
                             <v-flex xs12 sm6 md5>
                                 <v-text-field label="Last Name" v-model="input.lastName"></v-text-field>
                             </v-flex>
+                            <v-flex xs12 sm6 md1>
+                                <i class="mdi mdi-close-circle-outline" @click="clear" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
+                            </v-flex>
                         </v-layout>
-                        <v-layout row wrap align-items-center> 
+                        <v-layout row wrap align-items-center @mouseover="showIcons" @mouseleave="hideIcons"> 
                             <v-flex md1 class="pl-5">
                                 <i class="mdi mdi-domain"></i>
                             </v-flex>
@@ -29,31 +32,43 @@
                             <v-flex xs12 sm6 md5>
                                 <v-text-field label="Job Title" v-model="input.jobTilte"></v-text-field>
                             </v-flex>
+                            <v-flex xs12 sm6 md1>
+                                <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
+                            </v-flex>
                         </v-layout>
-                        <v-layout row wrap align-items-center>
+                        <v-layout row wrap align-items-center @mouseover="showIcons" @mouseleave="hideIcons">
                             <v-flex md1 class="pl-5">
                                 <i class="mdi mdi-email-outline"></i>
                             </v-flex>
                             <v-flex xs12 sm6 md10>
                                 <v-text-field type="email" label="Email" v-model="input.email" ></v-text-field>
                             </v-flex>
+                            <v-flex xs12 sm6 md1>
+                                <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
+                            </v-flex>
                         </v-layout>
-                        <v-layout row wrap align-items-center class="py-3">
+                        <v-layout row wrap align-items-center class="py-3" @mouseover="showIcons" @mouseleave="hideIcons" >
                             <v-flex md1 class="pl-5">
                                 <i class="mdi mdi-phone"></i>
                             </v-flex>
                             <v-flex xs12 sm6 md5>
-                                <vue-tel-input v-model="phone"
+                                <vue-tel-input v-model="input.phone"
                                     :preferredCountries="['ng', 'gb', 'us']">
                                 </vue-tel-input>
                             </v-flex>
+                            <v-flex xs12 sm6 md1>
+                                <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
+                            </v-flex>
                         </v-layout>
-                        <v-layout row wrap align-items-center>
+                        <v-layout row wrap align-items-center @mouseover="showIcons" @mouseleave="hideIcons" >
                             <v-flex md1 class="pl-5">
-                                <i class="mdi mdi-cake"></i>
+                                <i class="mdi mdi-note-outline"></i>
                             </v-flex>
                             <v-flex xs12 sm6 md5>
-                                <v-text-field type="date" label="Birthday" v-model="input.birthday" ></v-text-field>
+                                <v-text-field type="text" label="Notes" v-model="input.notes" ></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm6 md1>
+                                <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
                             </v-flex>
                         </v-layout>
                         <v-layout>
@@ -61,11 +76,12 @@
                                 <div class="foot mt-5">
                                     <div class="row">
                                         <div class="col">
-                                            More Fields
+                                            <router-link to="/morefields">
+                                                More Fields
+                                            </router-link>
                                         </div>
-                
                                         <div class="col">
-                                            <span @click.prevent="clear"> Cancel </span>
+                                            <router-link to="/contacts"> Cancel </router-link>
                                             <span @click.prevent="save" class="save">  Save</span>
                                         </div>
                                     </div>
@@ -86,6 +102,7 @@ export default {
     data() {
         return {
             phone: '',
+            isIconVisible: false,
         }
     },
     computed:{
@@ -130,6 +147,12 @@ export default {
             this.input.jobTitle = ''
 
         },
+        showIcons() {
+            this.isIconVisible = true;
+        },
+        hideIcons() {
+            this.isIconVisible = false;
+        },
         
     //  onInput({ number, isValid, country }) {
     //    console.log(number, isValid, country);
@@ -172,12 +195,17 @@ input{
     left:17px;
     top: 10px;
 }
+.mdi-close-circle-outline{
+    position: relative;
+    left: 5px;
+    cursor: pointer;
+}
 .text-left{
  
     top:50px;
     position: relative;
     font-weight: bold;
-    color: grey;
+    color: black;
     padding-left: 50px;
     margin-right: 100px;
 }
@@ -188,5 +216,10 @@ input{
 }
 .save{
     padding:10px;
+}
+a{
+    text-decoration: none;
+    color: rgb(66, 66, 187);
+    padding:5rem;
 }
 </style>

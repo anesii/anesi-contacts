@@ -6,10 +6,10 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         contacts : [
-            { image: 'AI', firstName: 'Anesi', lastName: 'Sahani', email: 'nesi@dickerson.net', company: 'Dickerson Ltd', jobTitle: 'Student', phone: '08093748329', address:'Lagos, Nigeria', birthday: 'May 5th'},
-            { image: 'AI', firstName: 'Charles', lastName: 'Joah', email: 'charles@larsen.com', company: 'Larsen PLC', jobTitle: 'Lead Director', phone: '09728276272', address:'Atlanta, Georgia', birthday: 'June 22nd' },
-            {image: 'AI', firstName: 'Nick', lastName: 'John', email: 'nick@geneva.co', company: 'Geneva & Sons', jobTitle: 'Assistant Executive Chairman', phone: '07063783283', address:'New York, USA', birthday: 'April 1st' },
-            {image: 'AI', firstName: 'Anesi',  lastName: 'Igebu', email: 'anesi@jami.com.ng', company: 'Jami Co.', jobTitle: 'CEO', phone: '07073283982', address:'Toronto, Canada', birthday: 'September 28th' }
+            { image: 'AI', firstName: 'Anesi', lastName: 'Sahani', email: 'nesi@dickerson.net', company: 'Dickerson Ltd', jobTitle: 'Student', phone: '+234 937 483 2932', address:'Lagos, Nigeria', birthday: 'May 5th'},
+            { image: 'AI', firstName: 'Charles', lastName: 'Joah', email: 'charles@larsen.com', company: 'Larsen PLC', jobTitle: 'Lead Director', phone: '+256 728 276 1172', address:'Atlanta, Georgia', birthday: 'June 22nd' },
+            {image: 'AI', firstName: 'Nick', lastName: 'John', email: 'nick@geneva.co', company: 'Geneva & Sons', jobTitle: 'Assistant Executive Chairman', phone: '+234 706 378 3283', address:'New York, USA', birthday: 'April 1st' },
+            {image: 'AI', firstName: 'Anesi',  lastName: 'Igebu', email: 'anesi@jami.com.ng', company: 'Jami Co.', jobTitle: 'CEO', phone: '+1 647 550 9359', address:'Toronto, Canada', birthday: 'September 28th' }
         ],
         sidebar: true,
         inputs : {
@@ -20,7 +20,10 @@ export const store = new Vuex.Store({
             company: '',
             phone: '',
             birthday: '',
-            jobTitle: ''
+            jobTitle: '',
+            notes:'',
+            nickname:'',
+            prefix:'',
         },
         deletedContacts:[],
         search: '',
