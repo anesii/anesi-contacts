@@ -1,8 +1,8 @@
 <template>
     <tr @mouseover="showIcons" @mouseleave="hideIcons" class="align-items-center">  
             <td v-if="!isIconVisible" :style="{backgroundColor: randomColor(contact.index)}" class="profile-image">{{contact.firstName[0]}}{{contact.lastName[0]}}</td>
-            <td v-if="isIconVisible && !checked" @click="activateCheck"> <i class="mdi mdi-18px mdi-checkbox-blank-outline"></i> </td>
-            <td v-if="isIconVisible && checked" @click="deactivateCheck"> <i class="mdi mdi-18px mdi-check-box-outline"></i> </td>
+            <td v-if="isIconVisible && !checked" @click="toggleCheck"> <i class="mdi mdi-18px mdi-checkbox-blank-outline"></i> </td>
+            <td v-if="isIconVisible && checked" @click="toggleCheck"> <i class="mdi mdi-18px mdi-check-box-outline"></i> </td>
             <td scope="row" items="contacts" @click="goToContact(contact.firstName)">{{contact.firstName}}
                 {{contact.lastName}}</td>
             <td @click="goToContact(contact.firstName)">{{contact.email}}</td>
@@ -46,11 +46,8 @@ export default {
             this.isIconVisible = false;
             this.checked = false;
         },
-        activateCheck() {
+        toggleCheck() {
             this.checked = !this.checked;
-        },
-        deactivateCheck() {
-            this.checked
         },
         randomColor(id) {
             const r = () => Math.floor(256 * Math.random());
