@@ -31,8 +31,12 @@ export default {
     }
     .text{
         /* text-align: center; */
-        font-family: 'Times New Roman', Times, serif;
-        left:15rem;
-        position: relative;
+        font-family: cursive;
+        bottom:44rem;
+        left: 43rem;
+        position: absolute;
+        font-size: 20px;
+        font-weight: bold;
+        opacity: 0.5;
     }
 </style>

@@ -30,7 +30,7 @@
                                 <v-text-field label="Company" v-model="input.company"></v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md5>
-                                <v-text-field label="Job Title" v-model="input.jobTilte"></v-text-field>
+                                <v-text-field label="Job Title" v-model="input.jobTitle"></v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md1>
                                 <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
