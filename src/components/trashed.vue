@@ -22,6 +22,21 @@
                         <td>{{contact.email}}</td>
                         <td>{{contact.phone}}</td>
                         <td>{{contact.company}} {{contact.jobTitle}}</td>
+                         <span class="dropdown">
+                            <i class="mdi mdi-dots-vertical pl-2" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" data-placement="top" title="List Settings" data-content="Popup content">
+                            </i>
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <a class="dropdown-item" @click="trash(contact)">
+                                    <i class="mdi mdi-trash-can-outline"></i>
+                                                Delete Permanently
+                                </a>
+                                <a class="dropdown-item" @click="push(contact)">
+                                    <i class="mdi mdi-recycle"></i>
+                                                Restore Contact
+                                </a>
+                            </div>
+                        </span>
                     </tr>
                 </tbody>
             </table>
@@ -36,6 +51,14 @@ export default {
         deletedContacts(){
         return this.$store.state.deletedContacts;
         }
+    },
+    methods: {
+       trash(payload){
+           this.$store.commit('trashedPermanently', payload);
+       },
+        push(payload){
+           this.$store.commit('restoreContact', payload);
+       }
     }
 }
 </script>
@@ -60,5 +83,9 @@ export default {
     }
     thead{
         border-bottom: .5px solid lightgrey;
+    }
+    .dropdown{
+        top: 10px;
+        position: relative;
     }
 </style>

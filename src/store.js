@@ -72,6 +72,19 @@ export const store = new Vuex.Store({
             state.deletedContacts.push(person);
             state.contacts.splice(state.contacts.indexOf(person), 1);
         },
+        trashedPermanently(state, contacted){
+            var person = state.deletedContacts.find(contact => {
+                return contact == contacted;
+            });
+            state.deletedContacts.splice(state.deletedContacts.indexOf(person), 1);
+        },
+        restoreContact(state, contacted){
+            var person = state.deletedContacts.find(contact => {
+                return contact == contacted;
+            });
+            state.contacts.push(person);
+            state.deletedContacts.splice(state.deletedContacts.indexOf(person), 1);
+        },
         addContacts(state, payload){
             state.contacts.push(payload);
         }
