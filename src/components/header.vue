@@ -4,54 +4,53 @@
         <div class="row">
             <div class="col">
                 <header class="navbar navbar-light">
-                <div class="toggle">
-                    <i class="mdi mdi-menu" @click="sidebarShow"></i>
-                </div>
-                <div class="ul">
-                <i class="mdi mdi-account-circle"></i> 
-               <router-link to="/contacts" class="title" exact>Contacts</router-link>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-3">
-                    <form class="form">
-                        <div class="input-group">
-                        <div class="input-group-prepend">
-                              <span class="input-group-text" id="basic-addon1"><i class="mdi mdi-magnify"></i></span> 
-                        </div> 
-                        <input type="text" class=" mdi mdi-magnify form-control" placeholder="Search" v-model="search" @input="searchers">
-                        <!-- <tr v-for="(contact, index) in filtered" :key="index"></tr> -->
-                        </div>
-                    </form>
+                    <div class="toggle">
+                        <i class="mdi mdi-menu" @click="sidebarShow"></i>
                     </div>
-                </div>
+                    <div class="ul">
+                        <i class="mdi mdi-account-circle"></i> 
+                        <router-link to="/contacts" class="title" exact> Contacts </router-link>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <form class="form">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="mdi mdi-magnify"></i>
+                                        </span> 
+                                    </div> 
+                                    <input type="text" class=" mdi mdi-magnify form-control" placeholder="Search" v-model="search" @input="searchers">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
-                <div class="top-right">
-                    <span>
-                        <i class="mdi mdi-apps" data-toggle="popover" data-placement="top" title="About" data-content="Popup content"></i>
-                    </span>
-                    <span>
-                        <i class="mdi mdi-bell" data-toggle="popover" data-placement="top" title="Notifications" data-content="Popup content"></i>
-                    </span>
-                    <span class="profile-image" data-toggle="popover" data-placement="top" title="Sign Out" data-content="Popup content"> AI </span>
-                </div>
-                
+                    <div class="top-right">
+                        <span>
+                            <i class="mdi mdi-apps" data-toggle="popover" data-placement="top" title="About" data-content="Popup content"></i>
+                        </span>
+                        <span>
+                            <i class="mdi mdi-bell" data-toggle="popover" data-placement="top" title="Notifications" data-content="Popup content"></i>
+                        </span>
+                        <span class="profile-image" data-toggle="popover" data-placement="top" title="Sign Out" data-content="Popup content"> AI </span>
+                    </div>
+                    
                 </header>
-        </div>
+            </div>
         </div>
     </nav> 
   </div>
 </template>
 
 <script>
-// import search from '../search.js'
-// import Contacts from './contacts.vue'
+
 
 export default {
     data() {
       return {
-        // contacts:[this.$store.state.contacts],
-        search: ''  
+          search: ''  
       }
     },
     methods:{
@@ -62,16 +61,6 @@ export default {
             this.$store.commit('updateSearch', this.search)
         }
     },
-    computed:{
-        // filteredContacts (){
-        //     return this.contacts.filter((contact) =>{
-        //         return contact.match(this.search);
-        //     });
-        // },
-        // filtered(contact){
-        //     this.$store.getters.getFilteredContacts;
-        // }
-    }
 }
 </script>
 

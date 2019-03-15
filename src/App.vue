@@ -11,14 +11,10 @@
 
 <script>
 import header from './components/header.vue';
-// import sidebar from './components/sidebar.vue';
-
-
 
 export default {
   components:{
   'app-header': header,
-//   'side-bar': sidebar
   },
   
 }
@@ -26,7 +22,4 @@ export default {
 
 <style scoped>
 @import url("//cdn.materialdesignicons.com/3.5.95/css/materialdesignicons.min.css");
-
-
-
 </style>

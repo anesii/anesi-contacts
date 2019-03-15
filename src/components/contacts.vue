@@ -2,30 +2,30 @@
     <div class="row pr-5 fixed">
         <div class="col">
             <div class="table-responsive">
-            <table class="table table-borderless" style="width:100%">
-                <div class="top">
-                    <span> CONTACTS </span>
-                    <span class="fans">({{contacts.length}})</span>
-                </div>
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Job Title & Company</th>
-                        <th scope="col"></th>
+                <table class="table table-borderless" style="width:100%">
+                    <div class="top">
+                        <span> CONTACTS </span>
+                        <span class="fans">({{contacts.length}})</span>
+                    </div>
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Job Title & Company</th>
+                            <th scope="col"></th>
 
-                        <th scope="col">
-                            <i class="mdi mdi-dots-vertical" data-toggle="popover" data-placement="top" title="List Settings" data-content="Popup content"></i>
-                        </th>
-                        <!-- <th scope="col"></th> -->
-                    </tr>
-                </thead>
-                <tbody v-for="(contact, index) in contacts" :key="index">
-                    <table-row :contact="contact" :index="index"/>
-                </tbody>
-            </table>
+                            <th scope="col">
+                                <i class="mdi mdi-dots-vertical" data-toggle="popover" data-placement="top" title="List Settings" data-content="Popup content"></i>
+                            </th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody v-for="(contact, index) in contacts" :key="index">
+                        <table-row :contact="contact" :index="index"/>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -44,11 +44,6 @@ export default {
             search: '',
             isIconVisible: false,
         } 
-    },
-    methods: {
-        
-        
-
     },
     computed: {
         contacts(){

@@ -31,6 +31,5 @@ export default {
 <style scoped>
 .bring-down{
     margin-top: 90px;
-    /* padding-right: 20px; */
 }
 </style>

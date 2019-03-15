@@ -1,11 +1,11 @@
 <template>
-<div>
     <div>
-        <div class="img" :style="{backgroundImage: 'url('+image+')'}"></div>
-    </div>
-    <div class="text">
-        Your Contact List is Empty!
-    </div>
+        <div>
+            <div class="img" :style="{backgroundImage: 'url('+image+')'}"></div>
+        </div>
+        <div class="text">
+            Your Contact List is Empty!
+        </div>
     </div>
 </template>
 

@@ -3,10 +3,10 @@
         <form class="form">
             <div class="row">
                 <div class="col-4">
-                <span class="profile-image">{{contact.firstName[0]}}{{contact.lastName[0]}}</span>
+                    <span class="profile-image">{{contact.firstName[0]}}{{contact.lastName[0]}}</span>
                 </div>
                 <div class="col-4">
-                <span class="name"> {{contact.firstName}} {{contact.lastName}} </span>
+                    <span class="name"> {{contact.firstName}} {{contact.lastName}} </span>
                 </div>
                 <div class="col-4">
                     <span class="icons">
@@ -18,12 +18,14 @@
                                 </i>
                                 <div class="dropdown-menu" aria-labelledby="triggerId">
                                     <a class="dropdown-item" @click="erase()">
-                                    <i class="mdi mdi-trash-can-outline"></i>
-                                        Delete Contact
+                                        <i class="mdi mdi-trash-can-outline"></i>
+                                                    Delete Contact
                                     </a>
                                 </div>
                             </span>
-                            <router-link to="/contacts"><i class="mdi mdi-close px-2" data-toggle="popover" data-placement="top" title="Close" data-content="Popup content"></i></router-link>
+                            <router-link to="/contacts">
+                                <i class="mdi mdi-close px-2" data-toggle="popover" data-placement="top" title="Close" data-content="Popup content"></i>
+                            </router-link>
                     </span>
                 </div>
             </div>
@@ -85,17 +87,17 @@ export default {
 
 <style scoped>
     .profile-image{
-    color: white;
-    background-color: rgb(40, 107, 196);
-    border-radius: 50%;
-    width:100px;
-    height:100px;
-    font-size: 35px;
-    font-weight: bold;
-    position: absolute;
-    text-align: center;
-    padding:22px;
-    margin-left: 75px;
+        color: white;
+        background-color: rgb(40, 107, 196);
+        border-radius: 50%;
+        width:100px;
+        height:100px;
+        font-size: 35px;
+        font-weight: bold;
+        position: absolute;
+        text-align: center;
+        padding:22px;
+        margin-left: 75px;
     }
     hr{
         top: 50px;

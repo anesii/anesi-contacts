@@ -8,95 +8,93 @@
             <v-app class="pt-5 mt-5 bg-white">
                     <v-form>
                         <v-container>
-                        <v-layout row wrap align-items-baseline> 
-                            <v-flex md1>
-                                <i class="mdi mdi-account-circle"></i>
-                            </v-flex>
-                            <v-flex xs12 sm6 md5>
-                                <v-text-field label="First Name" v-model="input.firstName"></v-text-field>
-                            </v-flex>
-                            <v-flex xs12 sm6 md5>
-                                <v-text-field label="Last Name" v-model="input.lastName"></v-text-field>
-                            </v-flex>
-                            <v-flex xs12 sm6 md1>
-                                <i class="mdi mdi-close-circle-outline" @click="clear" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
-                            </v-flex>
-                        </v-layout>
-                        <v-layout row wrap align-items-center @mouseover="showIcons" @mouseleave="hideIcons"> 
-                            <v-flex md1 class="pl-5">
-                                <i class="mdi mdi-domain"></i>
-                            </v-flex>
-                            <v-flex xs12 sm6 md5>
-                                <v-text-field label="Company" v-model="input.company"></v-text-field>
-                            </v-flex>
-                            <v-flex xs12 sm6 md5>
-                                <v-text-field label="Job Title" v-model="input.jobTitle"></v-text-field>
-                            </v-flex>
-                            <v-flex xs12 sm6 md1>
-                                <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
-                            </v-flex>
-                        </v-layout>
-                        <v-layout row wrap align-items-center @mouseover="showIcons" @mouseleave="hideIcons">
-                            <v-flex md1 class="pl-5">
-                                <i class="mdi mdi-email-outline"></i>
-                            </v-flex>
-                            <v-flex xs12 sm6 md10>
-                                <v-text-field type="email" label="Email" v-model="input.email" ></v-text-field>
-                            </v-flex>
-                            <v-flex xs12 sm6 md1>
-                                <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
-                            </v-flex>
-                        </v-layout>
-                        <v-layout row wrap align-items-center class="py-3" @mouseover="showIcons" @mouseleave="hideIcons" >
-                            <v-flex md1 class="pl-5">
-                                <i class="mdi mdi-phone"></i>
-                            </v-flex>
-                            <v-flex xs12 sm6 md5>
-                                <vue-tel-input v-model="input.phone"
-                                    :preferredCountries="['ng', 'gb', 'us']">
-                                </vue-tel-input>
-                            </v-flex>
-                            <v-flex xs12 sm6 md1>
-                                <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
-                            </v-flex>
-                        </v-layout>
-                        <v-layout row wrap align-items-center @mouseover="showIcons" @mouseleave="hideIcons" >
-                            <v-flex md1 class="pl-5">
-                                <i class="mdi mdi-note-outline"></i>
-                            </v-flex>
-                            <v-flex xs12 sm6 md5>
-                                <v-text-field type="text" label="Notes" v-model="input.notes" ></v-text-field>
-                            </v-flex>
-                            <v-flex xs12 sm6 md1>
-                                <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
-                            </v-flex>
-                        </v-layout>
-                        <v-layout>
-                            <v-flex>
-                                <div class="foot mt-5">
-                                    <div class="row">
-                                        <div class="col">
-                                            <router-link to="/morefields">
-                                                More Fields
-                                            </router-link>
-                                        </div>
-                                        <div class="col">
-                                            <router-link to="/contacts"> Cancel </router-link>
-                                            <span @click.prevent="save" class="save">  Save</span>
+                            <v-layout row wrap align-items-baseline> 
+                                <v-flex md1>
+                                    <i class="mdi mdi-account-circle"></i>
+                                </v-flex>
+                                <v-flex xs12 sm6 md5>
+                                    <v-text-field label="First Name" v-model="input.firstName"></v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm6 md5>
+                                    <v-text-field label="Last Name" v-model="input.lastName"></v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm6 md1>
+                                    <i class="mdi mdi-close-circle-outline" @click="clear" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
+                                </v-flex>
+                            </v-layout>
+                            <v-layout row wrap align-items-center @mouseover="showIcons" @mouseleave="hideIcons"> 
+                                <v-flex md1 class="pl-5">
+                                    <i class="mdi mdi-domain"></i>
+                                </v-flex>
+                                <v-flex xs12 sm6 md5>
+                                    <v-text-field label="Company" v-model="input.company"></v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm6 md5>
+                                    <v-text-field label="Job Title" v-model="input.jobTitle"></v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm6 md1>
+                                    <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
+                                </v-flex>
+                            </v-layout>
+                            <v-layout row wrap align-items-center @mouseover="showIcons" @mouseleave="hideIcons">
+                                <v-flex md1 class="pl-5">
+                                    <i class="mdi mdi-email-outline"></i>
+                                </v-flex>
+                                <v-flex xs12 sm6 md10>
+                                    <v-text-field type="email" label="Email" v-model="input.email" ></v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm6 md1>
+                                    <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
+                                </v-flex>
+                            </v-layout>
+                            <v-layout row wrap align-items-center class="py-3" @mouseover="showIcons" @mouseleave="hideIcons" >
+                                <v-flex md1 class="pl-5">
+                                    <i class="mdi mdi-phone"></i>
+                                </v-flex>
+                                <v-flex xs12 sm6 md5>
+                                    <vue-tel-input v-model="input.phone"
+                                        :preferredCountries="['ng', 'gb', 'us']">
+                                    </vue-tel-input>
+                                </v-flex>
+                                <v-flex xs12 sm6 md1>
+                                    <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
+                                </v-flex>
+                            </v-layout>
+                            <v-layout row wrap align-items-center @mouseover="showIcons" @mouseleave="hideIcons" >
+                                <v-flex md1 class="pl-5">
+                                    <i class="mdi mdi-note-outline"></i>
+                                </v-flex>
+                                <v-flex xs12 sm6 md5>
+                                    <v-text-field type="text" label="Notes" v-model="input.notes" ></v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm6 md1>
+                                    <i class="mdi mdi-close-circle-outline" @click="clear" v-if="isIconVisible" data-toggle="popover" data-placement="top" title="Remove" data-content="Popup content"></i>
+                                </v-flex>
+                            </v-layout>
+                            <v-layout>
+                                <v-flex>
+                                    <div class="foot mt-5">
+                                        <div class="row">
+                                            <div class="col">
+                                                <router-link to="/morefields">
+                                                    More Fields
+                                                </router-link>
+                                            </div>
+                                            <div class="col">
+                                                <router-link to="/contacts"> Cancel </router-link>
+                                                <span @click.prevent="save" class="save">  Save</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </v-flex>
-                        </v-layout>
+                                </v-flex>
+                            </v-layout>
                     </v-container>
                 </v-form>
             </v-app>
-
     </div>
 </template>
 
 <script>
-// Vue.component('vue-phone-number-input', VuePhoneNumberInput);
 
 export default {
     data() {
@@ -112,13 +110,6 @@ export default {
     },
     methods:{
         save: function() {
-            // var fnm =this.input.firstName
-            // var lnm =this.input.lastName
-            // var em =this.input.email
-            // var ph =this.input.phone
-            // var bd =this.input.birthday
-            // var co =this.input.company
-            // var job =this.input.jobTitle
             let input = {
                  firstName : this.input.firstName,
                  lastName : this.input.lastName,
@@ -128,10 +119,6 @@ export default {
                  company : this.input.company,
                  jobTitle : this.input.jobTitle
             }
-
-            // this.$store.state.contacts.push({firstName: fnm, lastName: lnm,
-            // email: em, phone:ph, birthday: bd,
-            // company: co, jobTitle: job})
 
             this.$store.commit('addContacts', input)
             this.clear()
@@ -153,10 +140,6 @@ export default {
         hideIcons() {
             this.isIconVisible = false;
         },
-        
-    //  onInput({ number, isValid, country }) {
-    //    console.log(number, isValid, country);
-    //  },
     }
 }
 </script>
